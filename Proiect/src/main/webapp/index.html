@@ -1,40 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>index</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MainPage</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<hr>
-	<hr>
-	<br />
-	<h2>Vizualizari + Adaugari + Stergeri</h2>
-	<p>
-		<a href="tabela_Pacienti.jsp"><b><strong>Pacienti</strong></b></a>
-	</p>
-	<p>
-		<a href="tabela_Medici.jsp"><b><strong>Medici</strong></b></a>
-	</p>
-	<p>
-		<a href="tabela_Consultatie.jsp"><b><strong>Consultatie</strong></b></a>
-	</p>
-	<br />
-	<hr>
-	<ul>
-		<li><a href="modifica_Pacient.jsp"><b><strong>Modifica
-						Pacienti</strong></b></a></li>
-	</ul>
-	<ul>
-		<li><a href="modifica_Medic.jsp"><b><strong>Modifica
-						Medici</strong></b></a></li>
-	</ul>
-	<ul>
-		<li><a href="modifica_Consultatie.jsp"><b><strong>Modifica
-						Consultatie</strong></b></a></li>
-	</ul>
-	<hr>
-	<hr>
-	<br />
+    <div class="navcontainer">
+        <a class="logo" href="index.html">Portalul<span>Tau</span></a>
+        
+        <img id="mobileMenuIcon" class="mobileMenu" src="assets/menu48px.png" alt="Open Navigation">
+
+        <div id ="linksContainer" class="linksContainer">
+            <ul>
+                <li><a class="listItem" href="farmacii.jsp">Farmacii</a></li>
+                <li><a class="listItem" href="altiicatine.jsp">Altii ca tine</a></li>
+                <li><a class="listItem" href="tranzactii.jsp">Tranzactii</a></li>
+            </ul>
+        </div>
+
+        <div id="linksContainerMobile" class="linksContainerMobile">
+            <img id="mobileXIcon" class="mobileMenuX" src="assets/xButton48px.png" alt="Close Navigation">
+            <ul class="mobileul">
+                <li><a class="listItem" href="farmacii.jsp">Farmacii</a></li>
+                <li><a class="listItem" href="altiicatine.jsp">Altii ca tine</a></li>
+                <li><a class="listItem" href="tranzactii.jsp">Tranzactii</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="mobile.js"></script>
 </body>
 </html>

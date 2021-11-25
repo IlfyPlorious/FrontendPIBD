@@ -1,5 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,18 +17,18 @@
 
         <div id ="linksContainer" class="linksContainer">
             <ul>
-                <li><a class="listItem" href="farmacii.html">Farmacii</a></li>
-                <li><a class="listItem" href="altiicatine.html">Altii ca tine</a></li>
-                <li><a class="listItem" href="tranzactii.html">Tranzactii</a></li>
+                <li><a class="listItem" href="farmacii.jsp">Farmacii</a></li>
+                <li><a class="listItem" href="altiicatine.jsp">Altii ca tine</a></li>
+                <li class="current"><a class="listItem" href="tranzactii.jsp">Tranzactii</a></li>
             </ul>
         </div>
 
         <div id="linksContainerMobile" class="linksContainerMobile">
             <img id="mobileXIcon" class="mobileMenuX" src="assets/xButton48px.png" alt="Close Navigation">
             <ul class="mobileul">
-                <li><a class="listItem" href="farmacii.html">Farmacii</a></li>
-                <li><a class="listItem" href="altiicatine.html">Altii ca tine</a></li>
-                <li><a class="listItem" href="tranzactii.html">Tranzactii</a></li>
+                <li><a class="listItem" href="farmacii.jsp">Farmacii</a></li>
+                <li><a class="listItem" href="altiicatine.jsp">Altii ca tine</a></li>
+                <li class="current"><a class="listItem" href="tranzactii.jsp">Tranzactii</a></li>
             </ul>
         </div>
     </div>

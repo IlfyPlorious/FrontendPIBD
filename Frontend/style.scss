@@ -1,12 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
 body{
     padding: 0;
     margin: 0;
-    background-color: black;
+    background-color: #f1f1f1;
+    font-family: Poppins, sans-serif;
 }
 
-.titleContainer{
-    background-color: grey;
+.current{
+    background-color: #fafafa;
+}
+
+.mobileMenu{
+    display: block;
+    width: 48px;
+    height: 48px;
+    align-self: center;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.navcontainer{
+    margin: 0;
+    background-color: #00e64d;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+}
+
+.logo{
+    color: #006600;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: bold;
+    padding: .5em;
+    margin: 0;
+    span{
+        color: #fafafa;
+    }
+}
+
+
+
+.linksContainer{
+    display: none;
+    align-self: center;
+}
+
+ul{
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    color: orange;
+    display: flex;
+
+    li{
+        padding: 1em;
+        margin: 0;
+
+        .listItem{
+            text-decoration: none;
+            display: block;
+            color: #006600;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        &:hover{
+            background-color: #f1f1f1;
+        }
+    }
+}
+
+.linksContainerMobile.active{
+    display: block;
+}
+
+.linksContainerMobile{
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    width: 50%;
+    right: 0;
+    top: 0;
+    background-color: #00e64d;
+
+    .mobileMenuX{
+        cursor: pointer;
+        float: right;
+    }
+
+    .mobileul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+        margin-top: 50px;
+    }
+}
+
+@media only screen and ( min-width: 700px ){
+    .mobileMenu{
+        display: none;
+    }
+
+    .linksContainer{
+        display: block;
+
+        .mobileMenuX{
+            display: none;
+        }
+
+        ul{
+            display: flex;
+        }
+    }
+
+    .linksContainerMobile.active{
+        display: none;
+    }
 }
