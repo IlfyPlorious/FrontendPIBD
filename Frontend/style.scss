@@ -28,6 +28,8 @@ body{
     display: flex;
     justify-content: space-between;
     width: auto;
+    position: relative;
+    z-index: 100;
 }
 
 .logo{
@@ -54,6 +56,7 @@ ul{
     margin: 0;
     padding: 0;
     display: flex;
+    margin-right: 1em;
 
     li{
         padding: 1em;
@@ -84,6 +87,11 @@ ul{
     right: 0;
     top: 0;
     background-color: #00e64d;
+    box-shadow: -5px 5px 2px grey, 5px 5px 2px grey;
+
+    .listItem{
+        border-bottom: 1px solid #006600;
+    }
 
     .mobileMenuX{
         cursor: pointer;
@@ -98,6 +106,7 @@ ul{
         margin-top: 50px;
     }
 }
+
 
 @media only screen and ( min-width: 700px ){
     .mobileMenu{
@@ -119,4 +128,5 @@ ul{
     .linksContainerMobile.active{
         display: none;
     }
+
 }

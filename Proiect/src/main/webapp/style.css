@@ -6,7 +6,7 @@ body {
   font-family: Poppins, sans-serif;
 }
 
-.current{
+.current {
   background-color: #fafafa;
 }
 
@@ -32,6 +32,8 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: auto;
+  position: relative;
+  z-index: 100;
 }
 
 .logo {
@@ -61,6 +63,7 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-right: 1em;
 }
 
 ul li {
@@ -92,6 +95,12 @@ ul li:hover {
   right: 0;
   top: 0;
   background-color: #00e64d;
+  -webkit-box-shadow: -5px 5px 2px grey, 5px 5px 2px grey;
+          box-shadow: -5px 5px 2px grey, 5px 5px 2px grey;
+}
+
+.linksContainerMobile .listItem {
+  border-bottom: 1px solid #006600;
 }
 
 .linksContainerMobile .mobileMenuX {
