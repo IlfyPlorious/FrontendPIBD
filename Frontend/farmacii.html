@@ -1,11 +1,3 @@
-<%@page import="com.mysql.cj.jdbc.DatabaseMetaData"%>
-<%@page import="java.sql.ResultSet"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-<%--
-	Author: Sandu Dragos
---%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,8 +8,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="farmacii.css">
 </head>
-<jsp:useBean id="jb" scope="session" class="db.JavaBean" />
-<jsp:setProperty name="jb" property="*" />
 <body>
     <div class="navcontainer">
         <a class="logo" href="index.html">Portalul<span>Tau</span></a>
@@ -26,26 +16,26 @@
 
         <div id ="linksContainer" class="linksContainer">
             <ul>
-                <li class="current"><a class="listItem" href="farmacii.jsp">Farmacii</a></li>
-                <li><a class="listItem" href="altiicatine.jsp">Altii ca tine</a></li>
-                <li><a class="listItem" href="tranzactii.jsp">Tranzactii</a></li>
+                <li class="current"><a class="listItem" href="farmacii.html">Farmacii</a></li>
+                <li><a class="listItem" href="altiicatine.html">Altii ca tine</a></li>
+                <li><a class="listItem" href="tranzactii.html">Tranzactii</a></li>
             </ul>
         </div>
 
         <div id="linksContainerMobile" class="linksContainerMobile">
             <img id="mobileXIcon" class="mobileMenuX" src="assets/xButton48px.png" alt="Close Navigation">
             <ul class="mobileul">
-                <li class="current"><a class="listItem" href="farmacii.jsp">Farmacii</a></li>
-                <li><a class="listItem" href="altiicatine.jsp">Altii ca tine</a></li>
-                <li><a class="listItem" href="tranzactii.jsp">Tranzactii</a></li>
+                <li class="current"><a class="listItem" href="farmacii.html">Farmacii</a></li>
+                <li><a class="listItem" href="altiicatine.html">Altii ca tine</a></li>
+                <li><a class="listItem" href="tranzactii.html">Tranzactii</a></li>
             </ul>
         </div>
     </div>
-    
+
     <section class="heroSection">
 
         <div class="heroContainer">
-            <img class="heroImage" alt="Imagine farmacie" src="assets/farmacie.png">
+            <img class="heroImage" alt="Imagine farmacie" src="/assets/farmacie.png">
             <h1 class="heroText"> Aici poti vizualiza si modifica baza de date cu farmacii </h1>
         </div>
 
@@ -59,54 +49,44 @@
                         <h1>id</h1>
                     </th>
                     <th>
-                        <h1>nume</h1>
+                        <h1>camp1</h1>
                     </th>
                     <th>
-                        <h1>adresa</h1>
+                        <h1>camp2</h1>
                     </th>
                     <th>
-                        <h1>preparate</h1>
-                    </th>
-                    <th>
-                        <h1>medicamente naturiste</h1>
+                        <h1>camp3</h1>
                     </th>
                 </tr>
-                
-                <%
-                	jb.connect();
-                	ResultSet rs = jb.vedeTabela("farmacii");
-                	long x;
-                	while(rs.next()){
-                		x = rs.getLong("idfarmacie");
-                %>
-                
                 <tr>
                     <td>
-                        <input type="checkbox" name="primarykey" value="<%= x%>">
+                        <input type="checkbox">
                     </td>
                     <td>
                         <h1>
-                            <%= rs.getString("nume") %>
+                            camp1
                         </h1>
                     </td>
                     <td>
                         <h1>
-                            <%= rs.getString("adresa") %>
+                            camp2
+                        </h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        <h1>
+                            camp1
                         </h1>
                     </td>
                     <td>
                         <h1>
-                            <%= rs.getBoolean("ofera_preparate")%>
+                            camp2
                         </h1>
                     </td>
-                    <td>
-                        <h1>
-                            <%= rs.getBoolean("medicamente_naturiste") %>
-                        </h1>
-                    </td>
-                    <%
-                		}
-                    %>
                 </tr>
             </table>
         </div>
@@ -114,9 +94,8 @@
 
     <section class="inputsSection">
         <div class="buttonContainer">
-            <input class="deleteButton" type="submit" value="Delete selected">
-            <input class="editButton" type="submit" value="Edit selected">
-            <input class="adaugaButton" type="submit" value="Adauga farmacie noua">
+            <input class="deleteButton" type="button" value="Delete selected">
+            <input class="editButton" type="button" value="Edit selected">
         </div>
     </section>
 

@@ -32,6 +32,11 @@ public class JavaBean {
 					throw new Exception(error);
 		}
 	} // connect()
+	
+	public DatabaseMetaData getMetaData() throws SQLException {
+		return con.getMetaData();
+	}
+	
 	public void connect(String bd) throws ClassNotFoundException, SQLException, Exception {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");

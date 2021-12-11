@@ -1,0 +1,85 @@
+.heroContainer{
+    display: flex;
+    justify-content:space-evenly;
+    padding: 1em;
+    
+    .heroText{
+        margin: 0;
+        align-self: center;
+        padding: 1em;
+    }
+
+    .heroImage{
+        margin: 0;
+        padding: 1em;
+        align-self: center;
+    }
+}
+
+.tableSection{
+    background: #3f3f3f;
+
+    .tableContainer{
+        overflow: auto;
+        max-height: 500px;
+    }
+
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    }
+
+    h1{
+        font-size: 1em;
+        margin: 0;
+        padding: 0;
+        color: #00e64d;
+    }
+
+    th, td{
+        text-align: center;
+        padding: .5em;
+        border-bottom: 1px solid black;
+    }
+
+    .header{
+
+        h1{
+            color: #009600;
+        }
+
+        &:hover{
+            background-color: #3f3f3f;
+        }
+    }
+
+    tr{
+        &:hover{
+            background-color: darkslategrey;
+        }
+    }
+}
+
+.inputsSection{
+    .buttonContainer{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0;
+        padding: 2em;
+        
+        .deleteButton, .editButton{
+            color: #00e64d;
+            text-decoration: none;
+            padding: .75em;
+            background-color: #3f3f3f;
+            border-radius: 10px;
+            border: 1px solid #111111;
+            cursor: pointer;
+
+            &:hover{
+                background-color: darkslategrey;
+            }
+        }
+    }
+}

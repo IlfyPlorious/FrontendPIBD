@@ -1,0 +1,91 @@
+.heroContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  padding: 1em;
+}
+
+.heroContainer .heroText {
+  margin: 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 1em;
+}
+
+.heroContainer .heroImage {
+  margin: 0;
+  padding: 1em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.tableSection {
+  background: #3f3f3f;
+}
+
+.tableSection .tableContainer {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.tableSection table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.tableSection h1 {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  color: #00e64d;
+}
+
+.tableSection th, .tableSection td {
+  text-align: center;
+  padding: .5em;
+  border-bottom: 1px solid black;
+}
+
+.tableSection .header h1 {
+  color: #009600;
+}
+
+.tableSection .header:hover {
+  background-color: #3f3f3f;
+}
+
+.tableSection tr:hover {
+  background-color: darkslategrey;
+}
+
+.inputsSection .buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 0;
+  padding: 2em;
+}
+
+.inputsSection .buttonContainer .deleteButton, .inputsSection .buttonContainer .editButton, .inputsSection .buttonContainer .adaugaButton {
+  color: #00e64d;
+  text-decoration: none;
+  padding: .75em;
+  background-color: #3f3f3f;
+  border-radius: 10px;
+  border: 1px solid #111111;
+  cursor: pointer;
+}
+
+.inputsSection .buttonContainer .deleteButton:hover, .inputsSection .buttonContainer .editButton:hover, .inputsSection .buttonContainer .adaugaButton:hover {
+  background-color: darkslategrey;
+}
+/*# sourceMappingURL=farmacii.css.map */
