@@ -64,6 +64,13 @@
   background-color: darkslategrey;
 }
 
+.alertMessage{
+	color: #ff0000;
+	margin: 0;
+	padding: 1em;
+	font-size: .5em;
+}
+
 .inputsSection .buttonContainer {
   display: -webkit-box;
   display: -ms-flexbox;
