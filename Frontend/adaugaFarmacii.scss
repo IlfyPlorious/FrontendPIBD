@@ -1,0 +1,78 @@
+body{
+    background-color: seagreen;
+}
+
+.logoContainer{
+    text-align: center;
+    align-self: center;
+    .logo{
+        color: #006600;
+        text-decoration: none;
+        font-size: 2em;
+        font-weight: bold;
+        padding: .5em;
+        margin: 0;
+        span{
+            color: #fafafa;
+        }
+    }
+}
+
+.formSection{
+    padding: 0;
+    margin: 0;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    height: 86vh;
+    display: flex;
+    justify-content: center;
+
+    .formContainer{
+        text-align: center;
+        margin: 0;
+        padding: 1rem;
+        padding-top: 3rem;
+        width: 80%;
+        display: block;
+        background-color: #f1f1f1;
+        overflow-y: scroll;
+
+        .label{
+            padding: 1rem;
+            vertical-align: middle;
+            font-size: 2rem;
+            color: #006600;
+            margin: 0;
+        }
+    
+        .textBox{
+            font-size: 2rem;
+            width: 80%;
+            color: #006600;
+            padding: .1rem;
+            margin: .2rem;
+        }
+
+        input[type="radio"]{
+            transform: scale(1.8);
+            vertical-align: middle;
+        }
+    
+        .submitButton{
+            font-size: 2rem;
+            margin: 2rem;
+            color: #00e64d;
+            text-decoration: none;
+            padding: .5em;
+            background-color: #3f3f3f;
+            border-radius: 10px;
+            border: 1px solid #111111;
+            cursor: pointer;
+    
+             &:hover{
+                background-color: darkslategrey;
+            }
+        }
+    }
+
+}

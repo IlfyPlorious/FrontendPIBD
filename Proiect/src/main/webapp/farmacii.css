@@ -26,6 +26,7 @@
 
 .tableSection {
   background: #3f3f3f;
+  margin: 1rem;
 }
 
 .tableSection .tableContainer {
@@ -54,6 +55,7 @@
 
 .tableSection .header h1 {
   color: #009600;
+  position: sticky;
 }
 
 .tableSection .header:hover {
@@ -65,10 +67,9 @@
 }
 
 .alertMessage{
-	color: #ff0000;
 	margin: 0;
 	padding: 1em;
-	font-size: .5em;
+	font-size: 1em;
 }
 
 .inputsSection .buttonContainer {

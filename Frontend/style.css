@@ -33,10 +33,11 @@ body {
           justify-content: space-between;
   width: auto;
   position: relative;
+  height: 10vh;
   z-index: 100;
 }
 
-.logo {
+.navcontainer .logoContainer .logo {
   color: #006600;
   text-decoration: none;
   font-size: 2em;
@@ -45,7 +46,7 @@ body {
   margin: 0;
 }
 
-.logo span {
+.navcontainer .logoContainer .logo span {
   color: #fafafa;
 }
 
@@ -64,11 +65,16 @@ ul {
   display: -ms-flexbox;
   display: flex;
   margin-right: 1em;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 ul li {
   padding: 1em;
   margin: 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 ul li .listItem {
@@ -77,6 +83,9 @@ ul li .listItem {
   color: #006600;
   font-weight: bold;
   font-size: 1.5em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 ul li:hover {

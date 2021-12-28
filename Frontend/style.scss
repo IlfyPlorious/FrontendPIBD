@@ -29,18 +29,21 @@ body{
     justify-content: space-between;
     width: auto;
     position: relative;
+    height: 10vh;
     z-index: 100;
 }
 
-.logo{
-    color: #006600;
-    text-decoration: none;
-    font-size: 2em;
-    font-weight: bold;
-    padding: .5em;
-    margin: 0;
-    span{
-        color: #fafafa;
+.logoContainer{
+    .logo{
+        color: #006600;
+        text-decoration: none;
+        font-size: 2em;
+        font-weight: bold;
+        padding: .5em;
+        margin: 0;
+        span{
+            color: #fafafa;
+        }
     }
 }
 
@@ -57,10 +60,12 @@ ul{
     padding: 0;
     display: flex;
     margin-right: 1em;
+    align-self: center;
 
     li{
         padding: 1em;
         margin: 0;
+        align-self: center;
 
         .listItem{
             text-decoration: none;
@@ -68,6 +73,7 @@ ul{
             color: #006600;
             font-weight: bold;
             font-size: 1.5em;
+            align-self: center;
         }
         &:hover{
             background-color: #f1f1f1;

@@ -21,6 +21,25 @@ body {
   cursor: pointer;
 }
 
+.miscSection {
+  width: 100%;
+  height: 150px;
+  background-color: #3f3f3f;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.miscSection .miscText {
+  margin: 0;
+  font-size: 1em;
+  font-weight: lighter;
+  color: #cfcfcf;
+  align-self: center;
+}
+
 .navcontainer {
   margin: 0;
   background-color: #00e64d;

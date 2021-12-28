@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tranzactii</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="adaugaFarmacii.css">
+</head>
+<body>
+    <div class="navcontainer">
+        <div class="logoContainer">
+            <a class="logo" href="index.html">Portalul<span>Tau</span></a>
+        </div>
+        
+        <img id="mobileMenuIcon" class="mobileMenu" src="assets/menu48px.png" alt="Open Navigation">
+
+        <div id ="linksContainer" class="linksContainer">
+            <ul>
+                <li><a class="listItem" href="farmacii.jsp">Farmacii</a></li>
+                <li><a class="listItem" href="altiicatine.jsp">Altii ca tine</a></li>
+                <li><a class="listItem" href="tranzactii.jsp">Tranzactii</a></li>
+            </ul>
+        </div>
+
+        <div id="linksContainerMobile" class="linksContainerMobile">
+            <img id="mobileXIcon" class="mobileMenuX" src="assets/xButton48px.png" alt="Close Navigation">
+            <ul class="mobileul">
+                <li><a class="listItem" href="farmacii.jsp">Farmacii</a></li>
+                <li><a class="listItem" href="altiicatine.jsp">Altii ca tine</a></li>
+                <li><a class="listItem" href="tranzactii.jsp">Tranzactii</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="formSection">
+        <div class="formContainer">
+            <form>
+                <label class="label" for="numeFarmacie">Nume:</label>
+                <input class="textBox" type="text" id="numeFarmacie" name="numeFarmacie"><br>
+                <label class="label" for="adresaFarmacie">Adresa:</label>
+                <input class="textBox" type="text" id="adresaFarmacie" name="adresaFarmacie">
+                <p class="label">Ofera preparate:</p>
+                <label class="label" for="daPreparate">Da</label>
+                <input class="radioButton" type="radio" id="daPreparate" name="preparate" value="true"><br>
+                <label class="label" for="nuPreparate">Nu</label>
+                <input class="radioButton" type="radio" id="nuPreparate" name="preparate" value="false">
+                <p class="label">Medicamente naturiste disponibile:</p>
+                <label class="label" for="daNaturiste">Da</label>
+                <input class="radioButton" type="radio" id="daNaturiste" name="naturiste" value="true"><br>
+                <label class="label" for="nuNaturiste">Nu</label>
+                <input class="radioButton" type="radio" id="nuNaturiste" name="naturiste" value="false"><br>
+                <input class="submitButton" type="submit" value="Adauga Farmacie" name="agaugaFarmacieButton">
+            </form>
+        </div>
+    </section>
+
+    <script src="mobile.js"></script>
+</body>
+</html>

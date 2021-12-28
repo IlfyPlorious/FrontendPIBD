@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MainPage</title>
+    <title>Tranzactii</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,6 +32,10 @@
             </ul>
         </div>
     </div>
+
+	<section class="miscSection">
+    <h1 class="miscText">Dragos Sandu 433A. Proiect Webapp cu JDBC. PIBD</h1>
+    </section>
 
     <script src="mobile.js"></script>
 </body>

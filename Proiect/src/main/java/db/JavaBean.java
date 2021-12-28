@@ -98,7 +98,7 @@ public class JavaBean {
 		}
 	} // end of adaugaClient()
 	
-	public void adaugaFarmacie(String nume, String adresa, Boolean oferaPreparate, Boolean medicamenteNaturiste)
+	public void adaugaFarmacie(String nume, String adresa, int oferaPreparate, int medicamenteNaturiste)
 			throws SQLException, Exception {
 		if (con != null) {
 			try {

@@ -1,3 +1,4 @@
+<%@page import="jdk.internal.util.xml.impl.Input"%>
 <%@page import="com.mysql.cj.jdbc.DatabaseMetaData"%>
 <%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -12,7 +13,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MainPage</title>
+<title>Farmacii</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="farmacii.css">
 </head>
@@ -59,19 +60,39 @@
 	<%
 		jb.connect();
 		
-		String message = "none";
-	
+		String messageDisplay = "none";
+		String message = "Mesaj Informativ";
+		String messageColor = "#32CD32";
+		String add = "1";
+		
 		if (request.getParameter("deleteFarmacieButton") != null ){
 			String[] toDelete = request.getParameterValues("primarykey");
 			if ( toDelete != null ){
 				jb.stergeDateTabela(toDelete, "farmacii", "idfarmacie");
-				message = "block";
+				messageColor = "#32CD32";
+				messageDisplay = "block";
+				message = "Stergerea a fost efectuata cu succes";
+			} else {
+				messageColor = "#ff0000";
+				messageDisplay = "block";
+				message = "Va rog sa selectati una dintre casute pentru a sterge o farmacie";
 			}
 		} else if (request.getParameter("editFarmacieButton") != null ) {
-			
-		} else if (request.getParameter("adaugaFarmacieButton") != null ) {
-			RequestDispatcher rd = request.getRequestDispatcher("tranzactii.jsp");
-			rd.forward(request, response);
+			String[] toDelete = request.getParameterValues("primarykey");
+			if ( toDelete != null && toDelete.length == 1){
+				RequestDispatcher rd = request.getRequestDispatcher("editeazaFarmacie.jsp");
+				rd.forward(request, response);
+			} else if ( toDelete != null && toDelete.length > 1){
+				messageColor = "#ff0000";
+				messageDisplay = "block";
+				message = "Va rog sa selectati DOAR O SINGURA casuta pentru a edita o farmacie";
+			} else {
+				messageColor = "#ff0000";
+				messageDisplay = "block";
+				message = "Va rog sa selectati una dintre casute pentru a edita o farmacie";
+			}
+		} else if (request.getParameter("adaugaFarmacieButton") != null) {
+			response.sendRedirect("adaugaFarmacie.jsp");
 		}
 	%>
 
@@ -103,6 +124,18 @@
                 	long x;
                 	while(rs.next()){
                 		x = rs.getLong("idfarmacie");
+                		String preparate = "";
+                		String naturiste = "";
+                		if ( rs.getBoolean("ofera_preparate") == true ){
+                			preparate = "Da";
+                		} else {
+                			preparate = "Nu";
+                		}
+                		if ( rs.getBoolean("medicamente_naturiste") == true ){
+                			naturiste = "Da";
+                		} else {
+                			naturiste = "Nu";
+                		}
                 	%>
 
 					<tr>
@@ -120,12 +153,12 @@
 						</td>
 						<td>
 							<h1>
-								<%= rs.getBoolean("ofera_preparate")%>
+								<%= preparate%>
 							</h1>
 						</td>
 						<td>
 							<h1>
-								<%= rs.getBoolean("medicamente_naturiste") %>
+								<%= naturiste%>
 							</h1>
 						</td>
 						<%
@@ -136,7 +169,7 @@
 			</div>
 		</section>
 
-		<h1 class="alertMessage" style="display: <%= message%>">Stergerea a fost efectuata cu succes</h1>
+		<h1 class="alertMessage" style="display: <%= messageDisplay%>; color: <%= messageColor%>;"><%=message %></h1>
 	
 		<section class="inputsSection">
 			<div class="buttonContainer">
@@ -151,6 +184,11 @@
 		rs.close();
 		jb.disconnect();
 	%>
+	
+	<section class="miscSection">
+        <h1 class="miscText">Dragos Sandu 433A. Proiect Webapp cu JDBC. PIBD</h1>
+    </section>
+	
 	
 	<script src="mobile.js"></script>
 </body>
