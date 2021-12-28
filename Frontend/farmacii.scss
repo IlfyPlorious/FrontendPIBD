@@ -13,6 +13,7 @@
         margin: 0;
         padding: 1em;
         align-self: center;
+        width: 70%;
     }
 }
 
@@ -80,6 +81,16 @@
             &:hover{
                 background-color: darkslategrey;
             }
+        }
+    }
+}
+
+@media only screen and ( min-width: 1000px ){
+    .heroContainer{
+    
+        .heroImage{
+            width: 50ch;
+            height: 50vh;
         }
     }
 }

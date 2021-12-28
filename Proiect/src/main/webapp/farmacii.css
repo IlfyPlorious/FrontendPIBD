@@ -22,6 +22,7 @@
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  width: 50%;
 }
 
 .tableSection {
@@ -95,5 +96,12 @@
 
 .inputsSection .buttonContainer .deleteButton:hover, .inputsSection .buttonContainer .editButton:hover, .inputsSection .buttonContainer .adaugaButton:hover {
   background-color: darkslategrey;
+}
+
+@media only screen and (min-width: 1000px) {
+  .heroContainer .heroImage {
+    width: 50ch;
+    height: 50vh;
+  }
 }
 /*# sourceMappingURL=farmacii.css.map */

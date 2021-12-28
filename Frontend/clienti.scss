@@ -1,0 +1,42 @@
+.viewSection{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10%;
+
+    .viewSectionContainer{
+        background-color: darkslategray;
+        width: 80%;
+        overflow-x: auto;
+
+        .viewTitle{
+            font-size: 1.5rem;
+            padding: 1.5rem;
+            padding-bottom: 0;
+            color: #90e990;
+        }
+
+        .viewClient{
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: start;
+            padding: 1.5rem;
+            padding-top: 0;
+           
+            .viewLabel{
+                vertical-align: middle;
+                margin: 0;
+                padding: .5rem;
+                color: #62cf62;
+                border-bottom: 1px solid #000000;
+            }
+
+            .clientAttribute{
+                vertical-align: middle;
+                margin: 0;
+                padding: .5rem;
+                color: #90e990;
+                border-bottom: 1px solid #000000;
+            }
+        }
+    }
+}

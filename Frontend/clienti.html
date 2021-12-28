@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clienti</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="farmacii.css">
+    <link rel="stylesheet" href="clienti.css">
+</head>
+<body>
+    <div class="navcontainer">
+        <a class="logo" href="index.html">Portalul<span>Tau</span></a>
+        
+        <img id="mobileMenuIcon" class="mobileMenu" src="assets/menu48px.png" alt="Open Navigation">
+
+        <div id ="linksContainer" class="linksContainer">
+            <ul>
+                <li><a class="listItem" href="farmacii.html">Farmacii</a></li>
+                <li class="current"><a class="listItem" href="altiicatine.html">Altii ca tine</a></li>
+                <li><a class="listItem" href="tranzactii.html">Tranzactii</a></li>
+            </ul>
+        </div>
+
+        <div id="linksContainerMobile" class="linksContainerMobile">
+            <img id="mobileXIcon" class="mobileMenuX" src="assets/xButton48px.png" alt="Close Navigation">
+            <ul class="mobileul">
+                <li><a class="listItem" href="farmacii.html">Farmacii</a></li>
+                <li class="current"><a class="listItem" href="altiicatine.html">Altii ca tine</a></li>
+                <li><a class="listItem" href="tranzactii.html">Tranzactii</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="heroSection">
+
+        <div class="heroContainer">
+            <img class="heroImage" alt="Imagine client" src="/assets/client.png">
+            <h1 class="heroText"> Aici poti vizualiza si modifica baza de date a clientilor </h1>
+        </div>
+
+    </section>
+
+    <section class="tableSection">
+        <div class="tableContainer">
+            <table>
+                <tr class="header">
+                    <th>
+                        <h1>id</h1>
+                    </th>
+                    <th>
+                        <h1>camp1</h1>
+                    </th>
+                    <th>
+                        <h1>camp2</h1>
+                    </th>
+                    <th>
+                        <h1>camp3</h1>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        <h1>
+                            camp1
+                        </h1>
+                    </td>
+                    <td>
+                        <h1>
+                            camp2
+                        </h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox">
+                    </td>
+                    <td>
+                        <h1>
+                            camp1
+                        </h1>
+                    </td>
+                    <td>
+                        <h1>
+                            camp2
+                        </h1>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section class="inputsSection">
+        <div class="buttonContainer">
+            <input class="deleteButton" type="submit" value="Delete selected">
+            <input class="editButton" type="submit" value="Edit selected">
+            <input class="editButton" type="submit" value="Vizualizeaza">
+            <input class="editButton" type="submit" value="Adauga client">
+        </div>
+    </section>
+
+    <section class="viewSection">
+        <div class="viewSectionContainer">
+            <h1 class="viewTitle">Vizualizare client</h1>
+            <div class="viewClient">
+                <label class="viewLabel" for="attrNume">Nume:</label>
+                <p class="clientAttribute" name="attr1Nume">
+                    content
+                </p>
+                <label class="viewLabel" for="attrPrenume">Prenume:</label>
+                <p class="clientAttribute" name="attrPrenume">
+                    content
+                </p>
+                <label class="viewLabel" for="attrAdresa">Adresa:</label>
+                <p class="clientAttribute" name="attrAdresa">
+                    content
+                </p>
+                <label class="viewLabel" for="attrContact">Contact:</label>
+                <p class="clientAttribute" name="attrContact">
+                    content
+                </p>
+                <label class="viewLabel" for="attrVarsta">Varsta:</label>
+                <p class="clientAttribute" name="attrContact">
+                    content
+                </p>
+                <label class="viewLabel" for="attrPremium">Abonament premium:</label>
+                <p class="clientAttribute" name="attrPremium">
+                    contentdgagsfsghsdgdaadaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                </p>
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="mobile.js"></script>
+</body>
+</html>

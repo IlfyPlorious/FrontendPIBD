@@ -31,20 +31,20 @@ body{
     position: relative;
     height: 10vh;
     z-index: 100;
-}
 
-.logoContainer{
-    .logo{
-        color: #006600;
-        text-decoration: none;
-        font-size: 2em;
-        font-weight: bold;
-        padding: .5em;
-        margin: 0;
-        span{
-            color: #fafafa;
+    
+        .logo{
+            color: #006600;
+            text-decoration: none;
+            font-size: 2em;
+            font-weight: bold;
+            padding: .5em;
+            margin: 0;
+            span{
+                color: #fafafa;
+            }
         }
-    }
+    
 }
 
 

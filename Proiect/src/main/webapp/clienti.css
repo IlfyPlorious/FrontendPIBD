@@ -1,0 +1,51 @@
+.viewSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10%;
+}
+
+.viewSection .viewSectionContainer {
+  background-color: darkslategray;
+  width: 80%;
+  overflow-x: auto;
+}
+
+.viewSection .viewSectionContainer .viewTitle {
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  padding-bottom: 0;
+  color: #90e990;
+}
+
+.viewSection .viewSectionContainer .viewClient {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding: 1.5rem;
+  padding-top: 0;
+}
+
+.viewSection .viewSectionContainer .viewClient .viewLabel {
+  vertical-align: middle;
+  margin: 0;
+  padding: .5rem;
+  color: #62cf62;
+  border-bottom: 1px solid #000000;
+}
+
+.viewSection .viewSectionContainer .viewClient .clientAttribute {
+  vertical-align: middle;
+  margin: 0;
+  padding: .5rem;
+  color: #90e990;
+  border-bottom: 1px solid #000000;
+}
+/*# sourceMappingURL=clienti.css.map */
