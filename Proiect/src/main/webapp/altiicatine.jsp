@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -52,24 +53,62 @@
 	</section>
 
 	<%
-		jb.connect();
+	jb.connect();
+		
+	String viewDisplay = "none";
+	String messageDisplay = "none";
+	String message="";
+	String messageColor = "";
 	
-		String viewDisplay = "none";
-		String messageDisplay = "none";
-		String message="";
-	
-		if ( request.getParameter("vizualizeazaClient") != null ){
-			String[] ids = request.getParameterValues("primarykey");
-			if ( ids != null && ids.length > 1 ){
-				message = "Va rog selectati un singur client";
-				messageDisplay = "block";
-			} else if ( ids != null && ids.length == 1 ){
-				viewDisplay = "flex";
-			} else {
-				message = "Va rog sa selectati un client pentru vizualizare";
-				messageDisplay = "block";
-			}
+	if ( request.getParameter("vizualizeazaClient") != null ){
+		String[] ids = request.getParameterValues("primarykey");
+		if ( ids != null && ids.length > 1 ){
+			message = "Va rog selectati un singur client";
+			messageDisplay = "block";
+		} else if ( ids != null && ids.length == 1 ){
+			viewDisplay = "flex";
+		} else {
+			message = "Va rog sa selectati un client pentru vizualizare";
+			messageDisplay = "block";
 		}
+		
+		
+	}
+
+	if (request.getParameter("adaugaClient") != null) {
+		response.sendRedirect("adaugaClient.jsp");
+	}
+
+	if (request.getParameter("deleteClient") != null) {
+		String[] toDelete = request.getParameterValues("primarykey");
+		
+		if (toDelete != null) {
+			jb.stergeDateTabela(toDelete, "clienti", "idclient");
+			messageColor = "#32CD32";
+			messageDisplay = "block";
+			message = "Stergerea a fost efectuata cu succes";
+		} else {
+			messageColor = "#ff0000";
+			messageDisplay = "block";
+			message = "Va rog sa selectati una dintre casute pentru a sterge un client";
+		}
+	}
+	
+	if (request.getParameter("editClient") != null ) {
+		String[] toDelete = request.getParameterValues("primarykey");
+		if ( toDelete != null && toDelete.length == 1){
+			RequestDispatcher rd = request.getRequestDispatcher("editClient.jsp");
+			rd.forward(request, response);
+		} else if ( toDelete != null && toDelete.length > 1){
+			messageColor = "#ff0000";
+			messageDisplay = "block";
+			message = "Va rog sa selectati DOAR O SINGURA casuta pentru a edita un client";
+		} else {
+			messageColor = "#ff0000";
+			messageDisplay = "block";
+			message = "Va rog sa selectati una dintre casute pentru a edita un client";
+		}
+	}
 	%>
 
 	<form action="altiicatine.jsp" method="post">
@@ -94,7 +133,16 @@
 
 					<%
                 	ResultSet rs = jb.vedeTabela("clienti");
-                	long x;
+                	Long x;
+                	
+                	ArrayList<String> pks = new ArrayList<String>();
+                	
+                	if ( request.getParameterValues("primarykey") != null ){
+						for ( String pk : request.getParameterValues("primarykey") ){
+							pks.add(pk);
+						}
+                	}
+                	
                 	while(rs.next()){
                 		x = rs.getLong("idclient");
                 		String premium = "";
@@ -106,7 +154,19 @@
                 	%>
 
 					<tr>
-						<td><input type="checkbox" name="primarykey" value="<%= x%>">
+						<td>
+							<%
+								if ( request.getParameterValues("primarykey") != null && pks.contains(x.toString())){
+									
+							%>
+							<input type="checkbox" name="primarykey" value="<%= x%>" checked>
+							<%
+								} else {
+							%>
+							<input type="checkbox" name="primarykey" value="<%= x%>">
+							<%
+								}
+							%>
 						</td>
 						<td>
 							<h1>
@@ -131,7 +191,7 @@
 			</div>
 		</section>
 		
-		<h1 class="alertMessage" style="display:<%=messageDisplay %>"><%=message %></h1>
+		<h1 class="alertMessage" style="display:<%=messageDisplay %>; color: <%=messageColor%>;"><%=message %></h1>
 		
 		<section class="inputsSection">
 			<div class="buttonContainer">
@@ -144,15 +204,18 @@
 	</form>
 	
 	<%
-		if ( request.getParameter("primarykey") != null ){
-			ResultSet client = jb.intoarceLinieDupaId("clienti", "idclient", Integer.parseInt(request.getParameter("primarykey")));
-			client.next();
-			String premium = "";
-			if ( client.getBoolean("abonament_premium") == true){
-				premium = "activ";
-			} else {
-				premium = "inactiv";
-			}
+		if ( request.getParameter("vizualizeazaClient") != null){
+			if (request.getParameter("primarykey") != null) {
+				ResultSet client = jb.intoarceLinieDupaId("clienti", "idclient",
+						Integer.parseInt(request.getParameter("primarykey")));
+				client.next();
+				String premium = "";
+				if (client.getBoolean("abonament_premium") == true) {
+					premium = "activ";
+				} else {
+					premium = "inactiv";
+				}
+				
 	%>
 	
 	<section class="viewSection" id="viewSection" style="display:<%= viewDisplay%>;">
@@ -160,7 +223,7 @@
 			<h1 class="viewTitle">Vizualizare client</h1>
 			<div class="viewClient">
 				<label class="viewLabel" for="attrNume">Nume:</label>
-				<p class="clientAttribute" name="attr1Nume"><%= client.getString("nume") %></p>
+				<p class="clientAttribute" name="attrNume"><%= client.getString("nume") %></p>
 				<label class="viewLabel" for="attrPrenume">Prenume:</label>
 				<p class="clientAttribute" name="attrPrenume"><%=client.getString("prenume") %></p>
 				<label class="viewLabel" for="attrAdresa">Adresa:</label>
@@ -177,7 +240,8 @@
 	</section>
 
 	<%
-			client.close();
+				client.close();
+			}
 		}
 		rs.close();
 		jb.disconnect();

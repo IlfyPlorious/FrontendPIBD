@@ -59,7 +59,6 @@
     	String adresaFarmacie = "";
     	int preparate = -1;
     	int naturiste = -1;
-    	String val = null;
     	
     	if ( request.getParameter("numeFarmacie") != null && request.getParameter("numeFarmacie") != "" ) {
     		numeFarmacie = request.getParameter("numeFarmacie");
@@ -103,7 +102,6 @@
        		 <p class="title">Adauga o farmacie noua</p> 
         	 <p class="alertMessage" style="display: <%= messageDisplay%>;">Va rog sa completati toate campurile</p>
             <form action="adaugaFarmacie.jsp" method="post">
-            	<input style="display:none" type="submit" name="adaugaFarmacieButton" value="<%= val%>">
                 <label class="label" for="numeFarmacie">Nume:</label>
                 <input class="textBox" type="text" id="numeFarmacie" name="numeFarmacie" value="<%= numeFarmacie%>"><br>
                 <label class="label" for="adresaFarmacie">Adresa:</label>

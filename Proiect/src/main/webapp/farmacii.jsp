@@ -1,4 +1,4 @@
-<%@page import="jdk.internal.util.xml.impl.Input"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.mysql.cj.jdbc.DatabaseMetaData"%>
 <%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -121,7 +121,17 @@
 
 					<%
                 	ResultSet rs = jb.vedeTabela("farmacii");
-                	long x;
+				
+					ArrayList<String> pks = new ArrayList<String>();
+                	
+                	if ( request.getParameterValues("primarykey") != null ){
+						for ( String pk : request.getParameterValues("primarykey") ){
+							pks.add(pk);
+						}
+                	}
+					
+                	Long x;
+                	
                 	while(rs.next()){
                 		x = rs.getLong("idfarmacie");
                 		String preparate = "";
@@ -139,7 +149,19 @@
                 	%>
 
 					<tr>
-						<td><input type="checkbox" name="primarykey" value="<%= x%>">
+						<td>
+							<%
+								if ( request.getParameterValues("primarykey") != null && pks.contains(x.toString())){
+									
+							%>
+							<input type="checkbox" name="primarykey" value="<%= x%>" checked>
+							<%
+								} else {
+							%>
+							<input type="checkbox" name="primarykey" value="<%= x%>">
+							<%
+								}
+							%>
 						</td>
 						<td>
 							<h1>

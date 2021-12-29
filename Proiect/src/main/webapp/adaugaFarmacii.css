@@ -78,6 +78,15 @@ body {
   vertical-align: middle;
 }
 
+.formSection .formContainer input[type="number"] {
+  width: 4.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #006600;
+  height: 40px;
+  vertical-align: middle;
+}
+
 .formSection .formContainer .submitButton {
   font-size: 2rem;
   margin: 2rem;

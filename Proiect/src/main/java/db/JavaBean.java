@@ -79,7 +79,7 @@ public class JavaBean {
 			throw new SQLException(error);
 		}
 	} // disconnect()
-	public void adaugaClient(String nume, String prenume, String adresa, String contact, int varsta, Boolean abonamentPremium)
+	public void adaugaClient(String nume, String prenume, String adresa, String contact, int varsta, int abonamentPremium)
 			throws SQLException, Exception {
 		if (con != null) {
 			try {
