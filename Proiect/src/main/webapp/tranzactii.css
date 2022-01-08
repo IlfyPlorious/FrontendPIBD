@@ -23,6 +23,10 @@
 
 .viewSection .viewSectionContainer .viewClientContainer {
   display: block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  
 }
 
 .viewSection .viewSectionContainer .viewClientContainer .viewClient {
@@ -58,18 +62,26 @@
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  margin-left: 1rem;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
 @media only screen and (min-width: 1000px) {
+	
+  .viewSection .viewSectionContainer {
+  	text-align: center;
+  }
+	
   .viewSection .viewSectionContainer .viewClientContainer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+     -webkit-box-pack: space-between;
+      -ms-flex-pack: space-between;
+          justify-content: space-between;
+  }
+  
+  .viewSection .viewSectionContainer .viewClientContainer .viewImg {
+  margin-right: 3rem;
+  margin-bottom: 3rem;
   }
 }
-/*# sourceMappingURL=clienti.css.map */

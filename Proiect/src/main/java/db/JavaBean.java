@@ -157,7 +157,7 @@ public class JavaBean {
 	public ResultSet vedeBon() throws SQLException, Exception {
 		ResultSet rs = null;
 		try {
-			String queryString = ("SELECT c.nume numeClient,c.prenume prenumeClient,c.abonament_premium,f.nume numeFarmacie,f.adresa adresaFarmacie,b.idbon,b.idfarmacie idFarmacieBon,b.idclient idPacientBon,b.data, b.produs, b.cantitate_produs, b.suma FROM farmacii f, clienti c, bonuriFiscale b WHERE c.idclient = b.idclient AND f.idfarmacie = b.idfarmacie;");
+			String queryString = ("SELECT c.nume numeClient,c.prenume prenumeClient,c.abonament_premium abonamentClient, f.nume numeFarmacie,f.adresa adresaFarmacie, b.idbon idBonTranzactie,b.idfarmacie idFarmacieBon,b.idclient idPacientBon,b.data, b.produs, b.cantitate_produs, b.suma FROM farmacii f, clienti c, bonuriFiscale b WHERE c.idclient = b.idclient AND f.idfarmacie = b.idfarmacie;");
 					Statement stmt = con.createStatement(/*ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY*/);
 					rs = stmt.executeQuery(queryString);
 		} catch (SQLException sqle) {
@@ -270,12 +270,12 @@ public class JavaBean {
 			}
 			return rs;
 		} // end of intoarceLinieDupaId()
-		public ResultSet intoarceBonDupaID(int ID) throws SQLException, Exception {
+		public ResultSet intoarceBonDupaID(Integer ID) throws SQLException, Exception {
 			ResultSet rs = null;
 			try {
 				// Executa interogarea
-				String queryString = ("SELECT c.nume numeClient,c.prenume prenumeClient,c.abonament_premium,f.nume numeFarmacie,f.adresa adresaFarmacie,b.idbon,b.idfarmacie idFarmacieBon,b.idclient idPacientBon,b.data, b.produs, b.cantitate_produs, b.suma FROM farmacii f, clienti c, bonuriFiscale b WHERE c.idclient = b.idclient AND f.idfarmacie = b.idfarmacie AND b.idbon = " +
-						ID + "';");
+				String queryString = ("SELECT c.nume numeClient,c.prenume prenumeClient, c.contact contactClient, c.adresa adresaClient, f.nume numeFarmacie, f.adresa adresaFarmacie, b.idbon idBonTranzactie, b.idfarmacie idFarmacieBon, b.idclient idPacientBon, b.data, b.produs, b.cantitate_produs, b.suma, b.tip_plata FROM farmacii f, clienti c, bonuriFiscale b WHERE c.idclient = b.idclient AND f.idfarmacie = b.idfarmacie AND b.idbon = " +
+						ID.toString() + ";");
 				Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
 						ResultSet.CONCUR_READ_ONLY);
 				rs = stmt.executeQuery(queryString); //sql exception

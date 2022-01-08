@@ -82,6 +82,7 @@
           justify-content: space-evenly;
   margin: 0;
   padding: 2em;
+  flex-wrap: wrap
 }
 
 .inputsSection .buttonContainer .deleteButton, .inputsSection .buttonContainer .editButton, .inputsSection .buttonContainer .adaugaButton {
@@ -92,6 +93,7 @@
   border-radius: 10px;
   border: 1px solid #111111;
   cursor: pointer;
+  margin-bottom: .75rem;
 }
 
 .inputsSection .buttonContainer .deleteButton:hover, .inputsSection .buttonContainer .editButton:hover, .inputsSection .buttonContainer .adaugaButton:hover {
@@ -103,5 +105,6 @@
     width: 50ch;
     height: 50vh;
   }
+ 
 }
 /*# sourceMappingURL=farmacii.css.map */

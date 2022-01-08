@@ -118,7 +118,7 @@
 				<table>
 					<tr class="header">
 						<th>
-							<h1>id</h1>
+							<h1></h1>
 						</th>
 						<th>
 							<h1>nume</h1>
@@ -248,7 +248,7 @@
 	%>
 
 	<section class="miscSection">
-		<h1 class="miscText">Dragos Sandu 433A. Proiect Webapp cu JDBC.
+		<h1 class="miscText">Dragos Sandu 433A. Proiect Webapp cu jsp.
 			PIBD</h1>
 	</section>
 
