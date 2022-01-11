@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tranzactii</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="adaugaFarmacii.css">
+    <link rel="stylesheet" href="tranzExtra.css">
+</head>
+<body>
+    <div class="navcontainer">
+        <div class="logoContainer">
+            <a class="logo" href="index.html">Portalul<span>Tau</span></a>
+        </div>
+        
+        <img id="mobileMenuIcon" class="mobileMenu" src="assets/menu48px.png" alt="Open Navigation">
+
+        <div id ="linksContainer" class="linksContainer">
+            <ul>
+                <li><a class="listItem" href="farmacii.jsp">Farmacii</a></li>
+                <li><a class="listItem" href="altiicatine.jsp">Altii ca tine</a></li>
+                <li><a class="listItem" href="tranzactii.jsp">Tranzactii</a></li>
+            </ul>
+        </div>
+
+        <div id="linksContainerMobile" class="linksContainerMobile">
+            <img id="mobileXIcon" class="mobileMenuX" src="assets/xButton48px.png" alt="Close Navigation">
+            <ul class="mobileul">
+                <li><a class="listItem" href="farmacii.jsp">Farmacii</a></li>
+                <li><a class="listItem" href="altiicatine.jsp">Altii ca tine</a></li>
+                <li><a class="listItem" href="tranzactii.jsp">Tranzactii</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section class="formSection">
+        <div class="formContainer">
+            <h1 class="title">Tranzactie in desfasurare</h1>
+            <form>
+                <label class="label" for="clientSelect">Client:</label>
+                <select class="selectBox" id="clientSelect" name="clientSelect" size="1">
+                    <option value="id1">kalogerakos</option>
+                </select></br>
+                <label class="label" for="vanzatorSelect">Vanzator:</label>
+                <select class="selectBox" id="vanzatorSelect" name="clientSelect" size="1">
+                    <option value="id1">Dona</option>
+                </select></br>
+                <label class="label" for="produsSelect">Produs:</label>
+                <select class="selectBox" id="produsSelect" name="produsSelect" size="1" onchange="toggle()">
+                    <option value="paracetamol">Paracetamol</option>
+                    <option value="nurofen">Nurofen</option>
+                    <option value="furazolidon">Furazolidon</option>
+                    <option value="clotrimazol">Clotrimazol</option>
+                    <option value="kerium">Kerium DS</option>
+                </select></br>
+                <label class="label" for="cantitate">Cantitate:</label>
+                <input class="numberBox" type="number" id="cantitate" name="cantitate" onchange="toggle()" min="1" max="100000"></br>
+                <div class="sumaContainer">
+                    <label class="label" for="suma" id="sumaLabel">Suma:</label>
+                    <input class="numberBox" type="number" name="suma" style="display: none;" id = "sumaDB">
+                    <p class="label" id="suma" name="sumaDisplay">0</p> 
+                    <p class="label" id="sumalei"> lei</p>
+                </div>
+                <label class="label" for="tipPlataSelect">Tip plata:</label>
+                <select class="selectBox" id="tipPlataSelect" name="tipPlataSelect">
+                    <option value="card">Card</option>
+                    <option value="numerar">Numerar</option>
+                </select><br>
+                <label class="label" for="data">Data:</label>
+                <input class="dateBox" type="date" id="dataTranzactie" name="dataTranzactie"></br>
+                
+                <div class="buttonContainer">
+                    <input class="submitButton" type="submit" value="Cumpara" name="agaugaTranzactieButton">
+                </div>
+                
+            </form>
+        </div>
+    </section>
+
+    <script src="misc.js"></script>
+    <script src="mobile.js"></script>
+</body>
+</html>

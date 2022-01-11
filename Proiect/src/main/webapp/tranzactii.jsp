@@ -87,7 +87,7 @@
 				message = "Va rog sa selectati una dintre casute pentru a edita o tranzactie";
 			}
 		} else if (request.getParameter("adaugaTranzactieButton") != null) {
-			response.sendRedirect("adaugaTranzactie.jsp");
+			response.sendRedirect("cumpara.jsp");
 		} else if ( request.getParameter("vizualizeazaTranzactieButton") != null ){
 			String[] ids = request.getParameterValues("primarykey");
 			if ( ids != null && ids.length > 1 ){
@@ -234,6 +234,8 @@
 					<p class="clientAttribute" name="attrProdus"><%=tranzactie.getString("produs") %></p>
 					<label class="viewLabel" for="attrCantitate">Cantitate:</label>
 					<p class="clientAttribute" name="attrCantitate"><%=tranzactie.getString("cantitate_produs") %></p>
+					<label class="viewLabel" for="attrCantitate">Suma [lei]:</label>
+					<p class="clientAttribute" name="attrCantitate"><%=tranzactie.getString("suma") %></p>
 					<label class="viewLabel" for="attrTipPlata">Tip plata:</label>
 					<p class="clientAttribute" name="attrTipPlata"><%=tranzactie.getString("tip_plata") %></p>
 					

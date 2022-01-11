@@ -1,0 +1,76 @@
+.formSection .formContainer {
+  text-align: left;
+}
+
+.formSection .formContainer .title {
+  font-size: 2rem;
+  color: #006600;
+  margin: 0;
+  padding: .5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.formSection .formContainer .selectBox {
+  padding: .5rem;
+  vertical-align: middle;
+  background-color: #3f3f3f;
+  color: #00e64d;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  width: 50%;
+}
+
+.formSection .formContainer .sumaContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  margin: 0;
+  padding: 0;
+}
+
+.formSection .formContainer .sumaContainer .label {
+  padding: .25rem;
+  padding-left: 1rem;
+}
+
+.formSection .formContainer .numberBox {
+  vertical-align: middle;
+  background-color: #3f3f3f;
+  color: #00e64d;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  padding: .5rem;
+  text-align: center;
+  width: 75px;
+}
+
+.formSection .formContainer .dateBox {
+  vertical-align: middle;
+  background-color: #3f3f3f;
+  color: #00e64d;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  padding: .5rem;
+}
+
+.formSection .formContainer .buttonContainer {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  .formSection .formContainer {
+    text-align: center;
+  }
+  .formSection .formContainer .sumaContainer {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+/*# sourceMappingURL=tranzExtra.css.map */

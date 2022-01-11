@@ -1,0 +1,73 @@
+.formSection{
+    .formContainer{ 
+        text-align: left;
+
+        .title{
+            font-size: 2rem;
+            color: #006600;
+            margin: 0;
+            padding: .5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .selectBox{
+            padding: .5rem;
+            vertical-align: middle;
+            background-color: #3f3f3f;
+            color: #00e64d;
+            font-size: 1.25rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            width: 50%;
+        }
+
+        .sumaContainer{
+            display: flex;
+            justify-content: left;
+            margin: 0;
+            padding: 0;
+            .label{
+                padding: .25rem;
+                padding-left: 1rem;
+            }
+        }
+
+        .numberBox{
+            vertical-align: middle;
+            background-color: #3f3f3f;
+            color: #00e64d;
+            border-radius: 10px;
+            font-size: 1.25rem;
+            padding: .5rem;
+            text-align: center;
+            width: 75px;
+        }
+
+        .dateBox{
+            vertical-align: middle;
+            background-color: #3f3f3f;
+            color: #00e64d;
+            border-radius: 10px;
+            font-size: 1.25rem;
+            padding: .5rem;
+        }
+        
+        .buttonContainer{
+            text-align: center;
+            margin-top: 1rem;
+        }
+    }
+}
+
+@media only screen and ( min-width: 1000px ){
+    .formSection{
+        .formContainer{
+            text-align: center;
+
+            .sumaContainer{
+                justify-content: center;
+            }
+        }
+    }
+}

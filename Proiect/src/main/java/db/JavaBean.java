@@ -116,8 +116,8 @@ public class JavaBean {
 		}
 	} // end of adaugaFarmacie()
 	
-	public void adaugaBon(int idclient, int idfarmacie, float suma, String produs, 
-			String tipDePlata, float cantitateProdus)
+	public void adaugaBon(int idclient, int idfarmacie, int suma, String produs, 
+			String tipDePlata, int cantitateProdus, String data)
 					throws SQLException, Exception {
 		if (con != null) {
 			try {
@@ -125,11 +125,11 @@ public class JavaBean {
 				Statement stmt;
 				stmt = con.createStatement();
 				stmt.executeUpdate("insert into bonuriFiscale(idclient, idfarmacie, data, suma, produs,	tip_plata, cantitate_produs) values('" + 
-						idclient + "' , '" + idfarmacie + "', '" + getCurrentDate() +
+						idclient + "' , '" + idfarmacie + "', '" + data +
 								"', '" + suma + "', '" + produs + "', '" + tipDePlata + "', '" + cantitateProdus + "');");
 				
 			} catch (SQLException sqle) {
-				error = "ExceptieSQL: Reactualizare nereusita; este posibil sa existe duplicate.";
+				error = "ExceptieSQL: " + sqle.getMessage();
 				throw new SQLException(error);
 			}
 		} else {
